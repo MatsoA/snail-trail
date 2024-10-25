@@ -1,3 +1,10 @@
+:root {
+    --main-bg-color: #feefdb;
+    --title-color: #8AB271;
+    --placeholder-text: rgb(177, 177, 177);
+    background-color: var(--main-bg-color);
+}
+
 body {
     font-family: 'Verdana', sans-serif;
     font-size: 100%
@@ -31,7 +38,7 @@ h6 {
     font-weight: 700;
     font-style: normal;
     font-size: 3em;
-    color: #8AB271
+    color: var(--title-color)
 }
 
 .subtitle {
@@ -39,7 +46,7 @@ h6 {
     font-weight: 700;
     font-style: normal;
     font-size: 2em;
-    color: #8AB271
+    color: var(--title-color)
 }
 
 button, a {
@@ -63,13 +70,77 @@ button, a {
 }
 
 .timer {
+    font-size: 3em;
     display: flex;
-    width: 100vw;
-    flex-direction: row
+    width:6em; 
+    height:20vw;
+    flex-direction: row;
+    color: var(--placeholder-text);
 }
 
 .time-input {
-    width: 4em;
+    text-align: center;
+    color:black;
+    font-size: 100%;
+    width: 1.6em;
     border:none;
+    border-color: none;
+    background-color: var(--main-bg-color);
 }
 
+.time-display {
+    width: 10vw;
+}
+
+.time-subs {
+    text-align: left;
+    color:black;
+    font-size: 0.3em;
+}
+
+input:focus {
+    outline:none;
+    border:none;
+    color:black;
+    border-color: black;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#snailstart {
+    width: 100px;
+    position: absolute;
+    left: 35%;
+    top: 30%
+}
+
+#snaildes {
+    width:100px;
+    position: absolute;
+    right: 35%;
+    top: 30%;
+    opacity: 0.5;
+}
+
+#snailpreview {
+    position: absolute;
+    left:35%;
+    top:35%;
+    width:19vw
+}
+
+#sandbox {
+    width:100vw;
+    height:100vh;
+}
