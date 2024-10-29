@@ -13,7 +13,25 @@
   <body>
     <main>
         <h5 class="subtitle" >Snail Trail</h5>
-        <div style="display:flex; flex-direction: row; gap:100px; margin:5vw 10px 10px 20px">
+        <div class="centered timer">
+          <div class="centered">
+            <div style="display:flex; flex-direction: row">
+              <input type="text" class="time-input" placeholder="00" maxlength="3" oninput="validateNumeric(this)">
+            </div>
+            <p class="time-subs">hours</p>
+          </div>            
+          
+          <div class="centered">
+            <input type="text" class="time-input" placeholder="00" maxlength="2" oninput="validateNumeric(this)">
+            <p class="time-subs">minutes</p>
+          </div>
+
+          <div class="centered">
+            <input type="text" class="time-input" placeholder="00" maxlength="2" oninput="validateNumeric(this)">
+            <p class="time-subs">seconds</p>
+          </div>
+      </div>
+        <div style="display:flex; flex-direction: row; gap:100px; margin:2vw 10px 10px 20px; height 75vh;">
           <div style="display:flex; flex-direction:column; flex:0.5">
             <p id="palettetext">Palette</p>
             <div id="palette">
@@ -26,34 +44,11 @@
             </a>
           </div>
 
-          <div style="display:flex; flex-direction: column;">
-            <div class="centered timer">
-                <div class="centered">
-                  <div style="display:flex; flex-direction: row">
-                    <input type="text" class="time-input" placeholder="00" maxlength="3" oninput="validateNumeric(this)">
-                  </div>
-                  <p class="time-subs">hours</p>
-                </div>            
-                
-                <div class="centered">
-                  <input type="text" class="time-input" placeholder="00" maxlength="2" oninput="validateNumeric(this)">
-                  <p class="time-subs">minutes</p>
-                </div>
-
-                <div class="centered">
-                  <input type="text" class="time-input" placeholder="00" maxlength="2" oninput="validateNumeric(this)">
-                  <p class="time-subs">seconds</p>
-                </div>
+          <div id="sandbox" style="border:1px solid #000000;">
+            <div>
+              <img id="snailstart" src="browsh.png" width="200px">
+              <img id="snaildes" src="browsh.png" width="200px">
             </div>
-
-
-            <canvas id="sandbox" style="border:1px solid #000000;">
-              <div>
-                <img id="snailstart" src="browsh.png" width="200px">
-                <img id="snaildes" src="browsh.png" width="200px">
-              </div>
-            </canvas>
-          <div>
         </div>
     </main>
   </body>
