@@ -168,6 +168,25 @@ input[type=number] {
 
 .ornament {
     position:absolute;
+    width: 100px;
+    height: 100px;
     top:0px;
     left:0px;
+}
+
+.ornament img {
+    height: 100%;
+    width: 100%;
+}
+
+.resize {
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
 }
