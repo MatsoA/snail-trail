@@ -20,8 +20,11 @@ class Ornament {
         e.currentTarget.parentNode.style.top = this.initY + e.pageY - this.firstY + 'px';
     }
 
-    hideResize = (e) => {
-        e.currentTarget.querySelector(".resize").style = "display: none";
+    hideResizeCurry = function(resizeHTML) {
+        return function(e) {
+            resizeHTML.style = "display: none";
+            resizeHTML.removeEventListener('mousemove', this.resizeLogic, false);
+        }
     }
 
     resizeLogic = (e) => {
@@ -67,7 +70,7 @@ class Ornament {
         }, false);
 
         /* -------- RESIZEABLE ---------*/
-        ornamentHTML.addEventListener('mouseover', (e) => {
+        ornamentHTML.addEventListener('pointerover', (e) => {
             e.preventDefault();
 
             //console.log(resizeHTML);
@@ -82,12 +85,16 @@ class Ornament {
                 ornament.firstX = e.pageX;
                 ornament.firstY = e.pageY;
 
-                resizeHTML.addEventListener('mousemove', this.resizeLogic, false)           
+                resizeHTML.addEventListener('mousemove', this.resizeLogic, false); 
 
-                resizeHTML.addEventListener('mouseup', () => {
-                    resizeHTML.removeEventListener('mousemove', this.resizeLogic, false)
-                }, false);
-            }, false); 
+                window.addEventListener('pointerup', () => {
+                    resizeHTML.removeEventListener('mousemove', this.resizeLogic, false);
+                    
+                    this.hideResizeCurry(resizeHTML)
+                }, { once: true});
+            }, {once: true}); 
+
+            ornamentHTML.addEventListener('pointerout', this.hideResizeCurry(resizeHTML), false)
         })
     }
 }

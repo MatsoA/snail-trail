@@ -172,11 +172,15 @@ input[type=number] {
     height: 100px;
     top:0px;
     left:0px;
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
 }
 
 .ornament img {
     height: 100%;
     width: 100%;
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
 }
 
 .resize {
